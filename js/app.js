@@ -1,4 +1,4 @@
-// Api call start
+//----- Api call start-----
 const loadProducts = () => {
    const url = `https://fakestoreapi.com/products`;
 
@@ -7,11 +7,11 @@ const loadProducts = () => {
     .then((data) => showProducts(data));
 };
 loadProducts();
-// Api call end
+//----- Api call end------
 
 
 
-// show all product in UI start
+// ------show all product in UI start-----
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
@@ -19,7 +19,7 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
-      <div>
+      <div >
     <img class="product-image" src=${product.image}></img>
       </div>
       <h3>${product.title}</h3>
@@ -32,7 +32,7 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
-// show all product in UI end
+// ------show all product in UI end-------
 
 
 let count = 0;
@@ -47,13 +47,12 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  //  const converted = parseInt(element);
    const converted = parseFloat(element);
   return converted;
 };
 
 
-// main price update function start
+// -------main price update function start-------
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
@@ -62,21 +61,21 @@ const updatePrice = (id, value) => {
   document.getElementById(id).innerText = Math.abs(total.toFixed(2));
   
 };
-// main price update function end
+// -------main price update function end---------
 
 
-// set innerText function start
+// -------set innerText function start------
 const setInnerText = (id, value) => {
   
   
    document.getElementById(id).innerText = Math.abs(value.toFixed(2));
    
 };
-// set innerText function end
+// -------set innerText function end-------
 
 
 
-// update delivery charge and total Tax start
+//------ update delivery charge and total Tax start-------
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
@@ -95,19 +94,17 @@ const updateTaxAndCharge = () => {
 
   updateTotal();
 };
-// update delivery charge and total Tax end
+// -------update delivery charge and total Tax end-------
 
 
- //grandTotal update function start
+ //------grandTotal update function start------
 const updateTotal = () => {
  
 
     const grandTotal =
    getInputValue("price") + getInputValue("delivery-charge") +
    getInputValue("total-tax"); 
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
   
 }; 
- //grandTotal update function end
-
-
+ //------grandTotal update function end--------

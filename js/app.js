@@ -7,7 +7,7 @@ const loadProducts = () => {
     .then((data) => showProducts(data));
 };
 loadProducts();
-//----- Api call end------
+//----- Api call end ------
 
 
 
@@ -92,7 +92,7 @@ const updateTaxAndCharge = () => {
   }
 
 
-  updateTotal();
+   updateTotal();
 };
 // -------update delivery charge and total Tax end-------
 
@@ -100,7 +100,6 @@ const updateTaxAndCharge = () => {
  //------grandTotal update function start------
 const updateTotal = () => {
  
-
     const grandTotal =
    getInputValue("price") + getInputValue("delivery-charge") +
    getInputValue("total-tax"); 

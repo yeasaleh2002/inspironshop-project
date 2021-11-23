@@ -27,7 +27,7 @@ body {
   transition: 0.6s;
   background-color: #f7f7f9;
   margin: 8px;
-  height: 560px;
+  
 }
 
 .single-product:hover {
@@ -39,7 +39,7 @@ body {
 .product-image {
   width: 150px; 
   height: 150px;
-}
+} 
  /* single products style part  end*/
 
 
